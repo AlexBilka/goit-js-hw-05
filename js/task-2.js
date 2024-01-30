@@ -8,7 +8,9 @@
 
 // Метод filter() можна використовувати для створення нового масиву з елементами, які задовольняють певну умову.
 // Використовуй метод includes() для перевірки, чи масив friends містить friendName.
-// Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль будуть виведені результати її роботи.
+
+const getUsersWithFriend = (users, friendName) =>
+  users.filter(user => user.friends.includes(friendName));
 
 const allUsers = [
   {
@@ -66,14 +68,3 @@ console.log(getUsersWithFriend(allUsers, 'Goldie Gentry'));
 // ]
 
 console.log(getUsersWithFriend(allUsers, 'Adrian Cross')); // []
-
-// Залиш цей код для перевірки ментором.
-
-// На що буде звертати увагу ментор при перевірці:
-// Оголошена змінна getUsersWithFriend
-// Змінній getUsersWithFriend присвоєна стрілочна функція з параметрами (users, friendName)
-// Для перебирання параметра users використовується метод filter()
-// Якщо значення параметра friendName — це рядок "Briana Decker", функція повертає масив об'єктів користувачів з іменами Sharlene Bush і Sheree Anthony
-// Якщо значення параметра friendName — це рядок "Goldie Gentry", функція повертає масив об'єктів користувачів з іменами Elma Head і Sheree Anthony
-// Якщо значення параметра friendName — це рядок "Adrian Cross", функція повертає порожній масив
-// Виклик функції з випадковими, але валідними аргументами повертає правильне значення
