@@ -1,47 +1,91 @@
-/*
-Об’єкт profile описує профіль користувача на ігровій платформі.
-У його властивостях зберігається ім’я профілю username та кількість активних годин playTime, проведених у грі.
-*/
+// Напиши стрілочну функцію sortByDescendingFriendCount(users) , яка прийматиме один параметр users — масив об’єктів користувачів.
 
-const profile = {
-  username: 'Jacob',
-  playTime: 300,
+// Функція має повертати масив усіх користувачів, відсортованих за спаданням кількостій їх друзів (властивість friends).
 
-  changeUsername(newName) {
-    this.username = newName;
-  },
+// Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль будуть виведені результати її роботи.
 
-  updatePlayTime(hours) {
-    this.playTime += hours;
-  },
+console.log(
+  sortByDescendingFriendCount([
+    {
+      name: 'Moore Hensley',
+      friends: ['Sharron Pace'],
+      gender: 'male',
+    },
+    {
+      name: 'Sharlene Bush',
+      friends: ['Briana Decker', 'Sharron Pace'],
+      gender: 'female',
+    },
+    {
+      name: 'Ross Vazquez',
+      friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+      gender: 'male',
+    },
+    {
+      name: 'Elma Head',
+      friends: ['Goldie Gentry', 'Aisha Tran'],
+      gender: 'female',
+    },
+    {
+      name: 'Carey Barr',
+      friends: ['Jordan Sampson', 'Eddie Strong'],
+      gender: 'male',
+    },
+    {
+      name: 'Blackburn Dotson',
+      friends: ['Jacklyn Lucas', 'Linda Chapman'],
+      gender: 'male',
+    },
+    {
+      name: 'Sheree Anthony',
+      friends: ['Goldie Gentry', 'Briana Decker'],
+      gender: 'female',
+    },
+  ])
+);
+// [
+//   {
+//     name: "Ross Vazquez",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Elma Head",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Moore Hensley",
+//     friends: ["Sharron Pace"],
+//     gender: "male"
+//   }
+// ]
 
-  getInfo() {
-    return `${this.username} has ${this.playTime} active hours!`;
-  },
-};
+// Залиш цей код для перевірки ментором.
 
-/*
-Доповни об’єкт profile методами для роботи з його властивостями.
-
-Метод changeUsername(newName) повинен приймати рядок (нове ім’я) в параметр newName та змінювати значення властивості username на нове. Нічого не повертає.
-Метод updatePlayTime(hours) повинен приймати число (кількість годин) у параметр hours та збільшити на нього значення властивості playTime. Нічого не повертає.
-Метод getInfo() має повертати рядок формату <Username> has <amount> active hours!, де <Username> — це ім’я профілю, а <amount> — кількість ігрових годин.
-*/
-
-console.log(profile.getInfo()); // "Jacob has 300 active hours!"
-
-profile.changeUsername('Marco');
-console.log(profile.getInfo()); // "Marco has 300 active hours!"
-
-profile.updatePlayTime(20);
-console.log(profile.getInfo()); // "Marco has 320 active hours!"
-
-/*
-На що буде звертати увагу ментор при перевірці:
-Оголошена змінна profile
-Значення змінної profile — це об’єкт з властивостями username, playTime, getInfo, changeUsername і updatePlayTime
-Значення властивості getInfo — це функція
-Значення властивості changeUsername — це функція
-Значення властивості updatePlayTime — це функція
-Для звернення до властивостей об’єкта в його методах використовується this
-*/
+// На що буде звертати увагу ментор при перевірці:
+// Оголошена змінна sortByDescendingFriendCount
+// Змінній sortByDescendingFriendCount присвоєна стрілочна функція з параметром (users)
+// Для перебирання параметра users використаний метод toSorted()
+// Виклик функції із зазначеним масивом users повертає новий масив користувачів, відсортований за спаданням кількості їхніх друзів
+// Виклик функції з випадковими, але валідними аргументами повертає правильне значення
